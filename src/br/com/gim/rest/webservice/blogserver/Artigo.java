@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.com.gim.rest.webservice.artigo;
+package br.com.gim.rest.webservice.blogserver;
 
 public class Artigo  implements java.io.Serializable {
     private java.util.Calendar dataPublicacao;
@@ -192,7 +192,7 @@ public class Artigo  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Artigo.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://webservice.blog.gim.com.br/", "artigo"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://webservice.blogserver.gim.com.br/", "artigo"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataPublicacao");
         elemField.setXmlName(new javax.xml.namespace.QName("", "dataPublicacao"));

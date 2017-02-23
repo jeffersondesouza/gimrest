@@ -3,15 +3,15 @@ package br.com.gim.blog.webservice;
 import java.rmi.RemoteException;
 
 import br.com.gim.rest.services.JsonConverter;
-import br.com.gim.rest.webservice.artigo.Artigo;
-import br.com.gim.rest.webservice.artigo.ArtigoServerWS;
-import br.com.gim.rest.webservice.artigo.ArtigoServerWSProxy;
+import br.com.gim.rest.webservice.blogserver.Artigo;
+import br.com.gim.rest.webservice.blogserver.BlogServerWS;
+import br.com.gim.rest.webservice.blogserver.BlogServerWSProxy;
 
 public class ArtigoWebServiceTest {
 
 	public static void main(String[] args) throws RemoteException {
 		
-		ArtigoServerWS artigoServerWS = new ArtigoServerWSProxy();
+		BlogServerWS artigoServerWS = new BlogServerWSProxy();
 		
 		Artigo[] artigos = artigoServerWS.getArtigos();
 		

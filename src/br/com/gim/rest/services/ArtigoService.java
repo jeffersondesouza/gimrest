@@ -2,28 +2,25 @@ package br.com.gim.rest.services;
 
 import java.rmi.RemoteException;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
-import br.com.emailWS.webservice.Lesmail;
-import br.com.emailWS.webservice.LesmailProxy;
-import br.com.gim.rest.webservice.artigo.Artigo;
-import br.com.gim.rest.webservice.artigo.ArtigoServerWS;
-import br.com.gim.rest.webservice.artigo.ArtigoServerWSProxy;
+import br.com.gim.rest.webservice.blogserver.Artigo;
+import br.com.gim.rest.webservice.blogserver.BlogServerWS;
+import br.com.gim.rest.webservice.blogserver.BlogServerWSProxy;
 
+@Stateless
 public class ArtigoService {
 	
-	ArtigoServerWS artigoWS = new ArtigoServerWSProxy();		
+	BlogServerWS blogWS = new BlogServerWSProxy();		
 		
-	public Artigo[] getArtigos(){
+	public String getArtigos(){
 		
 		try {
 			
-			Lesmail enviadorEmail = new LesmailProxy();
+			return JsonConverter.toJson(blogWS.getArtigos());
 			
-			
-			return artigoWS.getArtigos();
 		} catch (RemoteException e) {
 			throw new RuntimeException(e);
 		}
@@ -31,8 +28,13 @@ public class ArtigoService {
 		
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public Artigo getArtigoById(Long id) {
-		return artigoWS.getArtigoById(id);
+		try {
+			return blogWS.getArtigoById(id);
+		} catch (RemoteException e) {
+			throw new RuntimeException("Erro ao tentar buscar um artigo por ID",e);
+		}
 	}
 
 }

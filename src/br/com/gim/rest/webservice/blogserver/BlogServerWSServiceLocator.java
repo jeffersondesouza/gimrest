@@ -1,59 +1,59 @@
 /**
- * LesmailServiceLocator.java
+ * BlogServerWSServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.com.emailWS.webservice;
+package br.com.gim.rest.webservice.blogserver;
 
-public class LesmailServiceLocator extends org.apache.axis.client.Service implements br.com.emailWS.webservice.LesmailService {
+public class BlogServerWSServiceLocator extends org.apache.axis.client.Service implements br.com.gim.rest.webservice.blogserver.BlogServerWSService {
 
-    public LesmailServiceLocator() {
+    public BlogServerWSServiceLocator() {
     }
 
 
-    public LesmailServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public BlogServerWSServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public LesmailServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public BlogServerWSServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for LesmailPort
-    private java.lang.String LesmailPort_address = "http://localhost:9090/EmailWebService/Lesmail";
+    // Use to get a proxy class for BlogServerWSPort
+    private java.lang.String BlogServerWSPort_address = "http://localhost:8080/gim-infra/BlogServerWS";
 
-    public java.lang.String getLesmailPortAddress() {
-        return LesmailPort_address;
+    public java.lang.String getBlogServerWSPortAddress() {
+        return BlogServerWSPort_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String LesmailPortWSDDServiceName = "LesmailPort";
+    private java.lang.String BlogServerWSPortWSDDServiceName = "BlogServerWSPort";
 
-    public java.lang.String getLesmailPortWSDDServiceName() {
-        return LesmailPortWSDDServiceName;
+    public java.lang.String getBlogServerWSPortWSDDServiceName() {
+        return BlogServerWSPortWSDDServiceName;
     }
 
-    public void setLesmailPortWSDDServiceName(java.lang.String name) {
-        LesmailPortWSDDServiceName = name;
+    public void setBlogServerWSPortWSDDServiceName(java.lang.String name) {
+        BlogServerWSPortWSDDServiceName = name;
     }
 
-    public br.com.emailWS.webservice.Lesmail getLesmailPort() throws javax.xml.rpc.ServiceException {
+    public br.com.gim.rest.webservice.blogserver.BlogServerWS getBlogServerWSPort() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(LesmailPort_address);
+            endpoint = new java.net.URL(BlogServerWSPort_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getLesmailPort(endpoint);
+        return getBlogServerWSPort(endpoint);
     }
 
-    public br.com.emailWS.webservice.Lesmail getLesmailPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public br.com.gim.rest.webservice.blogserver.BlogServerWS getBlogServerWSPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            br.com.emailWS.webservice.LesmailServiceSoapBindingStub _stub = new br.com.emailWS.webservice.LesmailServiceSoapBindingStub(portAddress, this);
-            _stub.setPortName(getLesmailPortWSDDServiceName());
+            br.com.gim.rest.webservice.blogserver.BlogServerWSServiceSoapBindingStub _stub = new br.com.gim.rest.webservice.blogserver.BlogServerWSServiceSoapBindingStub(portAddress, this);
+            _stub.setPortName(getBlogServerWSPortWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -61,8 +61,8 @@ public class LesmailServiceLocator extends org.apache.axis.client.Service implem
         }
     }
 
-    public void setLesmailPortEndpointAddress(java.lang.String address) {
-        LesmailPort_address = address;
+    public void setBlogServerWSPortEndpointAddress(java.lang.String address) {
+        BlogServerWSPort_address = address;
     }
 
     /**
@@ -72,9 +72,9 @@ public class LesmailServiceLocator extends org.apache.axis.client.Service implem
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (br.com.emailWS.webservice.Lesmail.class.isAssignableFrom(serviceEndpointInterface)) {
-                br.com.emailWS.webservice.LesmailServiceSoapBindingStub _stub = new br.com.emailWS.webservice.LesmailServiceSoapBindingStub(new java.net.URL(LesmailPort_address), this);
-                _stub.setPortName(getLesmailPortWSDDServiceName());
+            if (br.com.gim.rest.webservice.blogserver.BlogServerWS.class.isAssignableFrom(serviceEndpointInterface)) {
+                br.com.gim.rest.webservice.blogserver.BlogServerWSServiceSoapBindingStub _stub = new br.com.gim.rest.webservice.blogserver.BlogServerWSServiceSoapBindingStub(new java.net.URL(BlogServerWSPort_address), this);
+                _stub.setPortName(getBlogServerWSPortWSDDServiceName());
                 return _stub;
             }
         }
@@ -94,8 +94,8 @@ public class LesmailServiceLocator extends org.apache.axis.client.Service implem
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("LesmailPort".equals(inputPortName)) {
-            return getLesmailPort();
+        if ("BlogServerWSPort".equals(inputPortName)) {
+            return getBlogServerWSPort();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -105,7 +105,7 @@ public class LesmailServiceLocator extends org.apache.axis.client.Service implem
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://webservice.emailWS.com.br/", "LesmailService");
+        return new javax.xml.namespace.QName("http://webservice.blogserver.gim.com.br/", "BlogServerWSService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class LesmailServiceLocator extends org.apache.axis.client.Service implem
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://webservice.emailWS.com.br/", "LesmailPort"));
+            ports.add(new javax.xml.namespace.QName("http://webservice.blogserver.gim.com.br/", "BlogServerWSPort"));
         }
         return ports.iterator();
     }
@@ -123,8 +123,8 @@ public class LesmailServiceLocator extends org.apache.axis.client.Service implem
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("LesmailPort".equals(portName)) {
-            setLesmailPortEndpointAddress(address);
+if ("BlogServerWSPort".equals(portName)) {
+            setBlogServerWSPortEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

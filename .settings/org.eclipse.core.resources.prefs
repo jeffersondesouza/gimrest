@@ -1,10 +1,8 @@
 eclipse.preferences.version=1
-encoding//src/br/com/emailWS/webservice/Lesmail.java=UTF-8
-encoding//src/br/com/emailWS/webservice/LesmailService.java=UTF-8
-encoding//src/br/com/emailWS/webservice/LesmailServiceLocator.java=UTF-8
-encoding//src/br/com/emailWS/webservice/LesmailServiceSoapBindingStub.java=UTF-8
-encoding//src/br/com/gim/rest/webservice/artigo/Artigo.java=UTF-8
-encoding//src/br/com/gim/rest/webservice/artigo/ArtigoServerWS.java=UTF-8
-encoding//src/br/com/gim/rest/webservice/artigo/ArtigoServerWSService.java=UTF-8
-encoding//src/br/com/gim/rest/webservice/artigo/ArtigoServerWSServiceLocator.java=UTF-8
-encoding//src/br/com/gim/rest/webservice/artigo/ArtigoServerWSServiceSoapBindingStub.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/Artigo.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/BlogServerWS.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/BlogServerWSService.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/BlogServerWSServiceLocator.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/BlogServerWSServiceSoapBindingStub.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/Comentario.java=UTF-8
+encoding//src/br/com/gim/rest/webservice/blogserver/Usuario.java=UTF-8
